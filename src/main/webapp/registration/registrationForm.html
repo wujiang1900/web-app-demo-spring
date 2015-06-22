@@ -1,7 +1,7 @@
 <div class="page-header"><h2>REGISTRATION FORM</h2></div>
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">Register an account with us!</div>
+    <div class="">
+      <div class="well">Register an account with us!</div>
     </div>
     <div class="panel-body" >All the fields are required.<p>
     • The username field accepts alpha-numeric values only <br/>
@@ -14,48 +14,24 @@
 
 <div ng-controller="registrationFormCtrl" novalidate>
 
-                <div class="frow" ng-show='(err!=null) && (err!=undefined)'>
-                  <div class="fset s6,col-8">
-                     <span class="col-6, danger" >Error: {{err}}.</span>&nbsp;
-                  </div>
-              </div>
-
-                <div class="frow" ng-show='(pswdErr!=null) && (pswdErr!=undefined)'>
-                  <div class="fset s6,col-8">
-                     <span class="col-6, danger" >Error: {{pswdErr}}.</span>&nbsp;
-                  </div>
-              </div>
-
-    <div class="row">
-        <div class="col-6">
             <form id="form" name="form" novalidate >
 
-                <div class="frow">
-                  <div class="fset">
+                  <div class="form-group">
                       <label >User name:</label>
-                      <input type='text' name='userName' class='s6 reqired' ng-model='model.userName' required error-class ng-blur="validateUser()"/>
+                      <input type='text' name='userName' class='' ng-model='model.userName' required error-class ng-blur="validateUser()"/>&nbsp;&nbsp;&nbsp;
+                      <span class="alert alert-danger" ng-show='(err!=null) && (err!=undefined)'>Error: {{err}}.</span>
                   </div>
-               </div><!--
-               <div class="frow">
-                  <div class="fset">
-                      <label >Email address:</label>
-                      <input type='text' name='email' class='s6 req' ng-model='email' required />
-                  </div>
-               </div> -->
-                <div class="frow">
-                  <div class="fset">
+
+                <div class="form-group">
                       <label >Password:</label>
-                      <input type='password' class='s6 req' ng-model='model.passWord' required ng-blur="validatePswd()"/>
-                  </div>
+                      <input type='password' class='' ng-model='model.passWord' required ng-blur="validatePswd()"/>&nbsp;&nbsp;&nbsp;
+                      <span class="alert alert-danger" ng-show='(pswdErr!=null) && (pswdErr!=undefined)'>Error: {{pswdErr}}.</span>
                </div>
 
-                <div class='btn-row fset'>
-                    <div class="col-1.5">
-                        <input type='button' class='btn styl1' ng-click='submit()' value='Register' ng-disabled='(err!=null) || (err===undefined) || (pswdErr!=null) || (pswdErr===undefined)' />
+                    <div class="col-lg-2">
+                        <input type='button' class='btn-primary ' ng-click='submit()' value='Register' ng-disabled='(err!=null) || (err===undefined) || (pswdErr!=null) || (pswdErr===undefined)' />
                     </div>
-                </div>
 
             </form>
-        </div>
-    </div>
+
 </div>
