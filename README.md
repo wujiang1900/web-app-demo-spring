@@ -23,7 +23,7 @@ cd ../../..
 mvn clean package
 ```
 
-You will fine the war file in target dir, where you can copy it to your favorite servlet container (e.g. Tomcat).
+You will find the war file in target dir, where you can copy it to your favorite servlet container (e.g. Tomcat).
 
 Then you can access this app from your browser at url like [http://localhost:8080/webAppDemo-1](http://localhost:8080/webAppDemo-1). 
 
