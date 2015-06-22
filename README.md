@@ -9,6 +9,8 @@ A summary of tech stack:
 * MongoDB for persistence.
 * Spring Data hooks up MongoDB.
 
+* Spring boot was used during project development and build/deply stage.
+
 ## Getting Started
 Make sure that you have MongoDB (running on the default port 27017) installed on your computer. 
 You also need bower and maven to build the war file.
