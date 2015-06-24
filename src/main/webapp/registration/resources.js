@@ -2,6 +2,6 @@
   'use strict';
   angular.module('myApp.registration')
     .factory('User', ['$resource', function($resource) {
-       return $resource('user/:userName');
+       return $resource('api/user/:userName');
     }])
 })();
