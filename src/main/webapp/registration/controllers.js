@@ -2,9 +2,12 @@
   'use strict';
 
 angular.module('myApp.registration')
-.controller('registrationFormCtrl', ['$scope', 'User', 'Users', function($scope, User, Users) {
+.controller('registrationFormCtrl', ['$scope', 'User', function($scope, User) {
 
-  $scope.model = {userName:'', passWord:''};
+      $scope.model = new User();
+      $scope.model.userName = '';
+      $scope.model.passWord = '';
+
   $scope.validateUser = function() {
     if($scope.model.userName.length < 5) {
       $scope.err = 'The username length should be no less than 5 characters'; return;
@@ -49,12 +52,13 @@ angular.module('myApp.registration')
   };
 
   $scope.submit = function() {
-    Users.save( $scope.model, 
+  //  Users.save( $scope.model, 
+    $scope.model.$save(
       function(){
         alert("Your registration has completed successfully!");
       },
       function(response) {
-        $scope.err = 'Server Error when saving your registration! Error code='+response.status;
+        $scope.pswdErr = 'Server Error when saving your registration! Error code='+response.status;
         return;
       });
   };

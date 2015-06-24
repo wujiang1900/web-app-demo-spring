@@ -23,7 +23,7 @@ public class RegisterController {
         return userService.getUser(userName);
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public void register(@RequestBody User user) {
      // System.out.println("register");
          userService.addUser(user);
